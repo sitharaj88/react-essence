@@ -1,0 +1,60 @@
+{
+  "name": "reactessence",
+  "displayName": "ReactEssence",
+  "description": "A unique ReactJS language support extension with rich snippets and syntax highlighting tailored for ReactEssence.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "images/icon.png",
+  "keywords": [
+    "ReactJS",
+    "React",
+    "JavaScript",
+    "JSX",
+    "Snippets",
+    "Syntax Highlighting",
+    "Components",
+    "Hooks",
+    "Frontend",
+    "Web Development"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sitharaj88/react-essence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sitharaj88/react-essence/issues"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "reactjs",
+        "aliases": ["jsx", "reactjs"],
+        "extensions": [".jsx", ".js"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "reactjs",
+        "scopeName": "source.reactessence",
+        "path": "./syntaxes/reactjs.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "reactjs",
+        "path": "./snippets/reactessence.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "package": "vsce package",
+    "test": "npm run compile && node ./out/test/runTest.js"
+  }
+}

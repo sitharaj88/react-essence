@@ -1,0 +1,129 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "jsx",
+	"patterns": [
+	  {
+		"include": "#keywords"
+	  },
+	  {
+		"include": "#strings"
+	  },
+	  {
+		"include": "#jsx-tags"
+	  },
+	  {
+		"include": "#jsx-expressions"
+	  },
+	  {
+		"include": "#javascript"
+	  }
+	],
+	"repository": {
+	  "keywords": {
+		"patterns": [
+		  {
+			"name": "keyword.control.reactjs",
+			"match": "\\b(if|while|for|return|const|let|var|function|class)\\b"
+		  }
+		]
+	  },
+	  "strings": {
+		"name": "string.quoted.double.reactjs",
+		"begin": "\"",
+		"end": "\"",
+		"patterns": [
+		  {
+			"name": "constant.character.escape.reactjs",
+			"match": "\\\\."
+		  }
+		]
+	  },
+	  "jsx-tags": {
+		"patterns": [
+		  {
+			"name": "meta.tag.jsx",
+			"begin": "<(\\w+)",
+			"beginCaptures": {
+			  "1": {
+				"name": "entity.name.tag.jsx"
+			  }
+			},
+			"end": "/?>",
+			"patterns": [
+			  {
+				"include": "#jsx-attributes"
+			  },
+			  {
+				"include": "#jsx-children"
+			  }
+			]
+		  }
+		]
+	  },
+	  "jsx-attributes": {
+		"patterns": [
+		  {
+			"name": "entity.other.attribute-name.jsx",
+			"match": "\\b\\w+(?=\\s*=)"
+		  },
+		  {
+			"name": "string.quoted.double.jsx",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+			  {
+				"name": "constant.character.escape.jsx",
+				"match": "\\\\."
+			  }
+			]
+		  }
+		]
+	  },
+	  "jsx-children": {
+		"patterns": [
+		  {
+			"include": "#javascript"
+		  },
+		  {
+			"include": "#strings"
+		  }
+		]
+	  },
+	  "jsx-expressions": {
+		"patterns": [
+		  {
+			"name": "meta.embedded.expression.jsx",
+			"begin": "{",
+			"end": "}",
+			"patterns": [
+			  {
+				"include": "#javascript"
+			  }
+			]
+		  }
+		]
+	  },
+	  "javascript": {
+		"patterns": [
+		  {
+			"name": "variable.other.readwrite.js",
+			"match": "\\b\\w+\\b"
+		  },
+		  {
+			"name": "function.declaration.js",
+			"match": "\\bfunction\\s+\\w+\\s*\\("
+		  },
+		  {
+			"name": "storage.type.function.arrow.js",
+			"match": "\\(.*?\\)\\s*=>"
+		  },
+		  {
+			"name": "constant.language.boolean.js",
+			"match": "\\b(true|false|null|undefined)\\b"
+		  }
+		]
+	  }
+	},
+	"scopeName": "source.reactessence"
+  }
+  
