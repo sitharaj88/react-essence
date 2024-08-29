@@ -1,8 +1,8 @@
 {
   "name": "reactessence",
-  "displayName": "ReactEssence",
+  "displayName": "ReactJs Essence",
   "description": "A unique ReactJS language support extension with rich snippets and syntax highlighting tailored for ReactEssence.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "sitharaj",
   "engines": {
     "vscode": "^1.92.0"
